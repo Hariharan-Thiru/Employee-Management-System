@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        User Dashboard
+    </title>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Poppins", sans-serif;
+            position: relative;
+            font-size: 16px;
+        }
+        ol,
+        ul {
+            padding: 0;
+            list-style-type: none;
+        }
+        .sidebar-expand{
+            display: flex;
+        }
+        .sidebar {
+            background-color: #0063B2FF;
+            position: fixed;
+            width: 300px;
+            height: 100vh;
+        }
+        .sidebar-menu {
+            padding: 33px 23px 63px;
+            list-style-type: none;
+        }
+        .sidebar-menu>li>a {
+            width: 100%;
+            padding: 30px 25px;
+            height: 45px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            font-weight: 500;
+            text-transform: capitalize;
+            color: #fff;
+            transition: color 0.2s ease-in-out;
+            text-decoration: none;
+        }
+        .sidebar-menu.sidebar-menu-dropdown-content>li>a {
+            font-size: 16px;
+            font-weight: 400;
+            height: 40px;
+        }
+        .sidebar-menu-dropdown-content>li>a {
+            padding: 15px;
+        }
+        .sidebar-menu>li>a:hover {
+            color:#222943;
+        }
+        .sidebar-menu-dropdown-content {
+            padding: 0;
+            height: 0;
+            overflow: hidden;
+            transition: height 0.25s ease-in-out;
+        }
+        .sidebar-menu-dropdown-content>li>a {
+            padding-left: 65px;
+        }
+        .dropdown-icon {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .dropdown-icon.active {
+            transform: rotate( 180deg);
+            transition: all .2s ease-in-out;
+        }
+        .sidebar-menu>li>a>i {
+            font-size: 1.5rem;
+            margin-right: 12px;
+        }
+        .sidebar-menu-dropdown {
+            position: relative;
+        }
+        .sidebar-menu-dropdown .dropdown-icon {
+            position: absolute;
+            right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        } 
+        .sidebarheader{
+            margin: 40px 20px 10px 40px;
+            padding-left: 20px;
+            border-left: 2px solid #000;
+        }
+        .sidebarheader p{
+            padding: 3px 0;
+            font-size: 20px;
+        }
+        .main{
+            margin-left: 300px;
+        }
+    </style>
+</head>
+<body class="sidebar-expand">
+    <div class="sidebar">
+        <div class="sidebarheader">
+            <p>PROJECT</p><p>MANAGEMENT</p> <p> PORTAL </p>
+        </div>
+        <div class="simlebar-sc">
+            <ul class="sidebar-menu tf">
+                <li>
+                    <a href="userdashboard.html">
+                        <i class='bx bxs-home'></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="sidebar-submenu">
+                    <a href="#" class="sidebar-menu-dropdown">
+                        <i class='bx bxs-bolt'></i>
+                        <span>Project</span>
+                        <div class="dropdown-icon"><i class='bx bx-chevron-down'></i></div>
+                    </a>
+                    <ul class="sidebar-menu sidebar-menu-dropdown-content">
+                        <li>
+                            <a href="#">
+                               Project Progress
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Project Details
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-message-rounded-detail'></i>
+                        <span>Messages</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html">
+                        <i class='bx bx-log-out-circle'></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="main">
+
+
+    </div>
+    <script>
+        document.querySelectorAll('.sidebar-submenu').forEach(e => {
+            e.querySelector('.sidebar-menu-dropdown').onclick = (event) => {
+                event.preventDefault()
+                e.querySelector('.sidebar-menu-dropdown .dropdown-icon').classList.toggle('active')
+
+                let dropdown_content = e.querySelector('.sidebar-menu-dropdown-content')
+                let dropdown_content_lis = dropdown_content.querySelectorAll('li')
+
+                let active_height = dropdown_content_lis[0].clientHeight * dropdown_content_lis.length
+
+                dropdown_content.classList.toggle('active')
+
+                dropdown_content.style.height = dropdown_content.classList.contains('active') ? active_height + 'px' : '0'
+            }
+        })
+    </script>
+</body>
+</html>

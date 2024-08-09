@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Admin Dashboard
+    </title>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body class="sidebar-expand">
+    <div class="sidebar">
+        <div class="sidebarheader">
+            <p>PROJECT</p>
+            <p>MANAGEMENT</p>
+            <p> PORTAL </p>
+        </div>
+        <div class="simlebar-sc">
+            <ul class="sidebar-menu tf">
+                <li>
+                    <a href="admindashboard.html">
+                        <i class='bx bxs-home'></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="sidebar-submenu">
+                    <a href="#" class="sidebar-menu-dropdown">
+                        <i class='bx bxs-bolt'></i>
+                        <span>Projects</span>
+                        <div class="dropdown-icon"><i class='bx bx-chevron-down'></i></div>
+                    </a>
+                    <ul class="sidebar-menu sidebar-menu-dropdown-content active">
+                        <li>
+                            <a href="adminproject.html">
+                                Projects
+                            </a>
+                        </li>
+                        <li>
+                            <a href="adminprojectdetails.html">
+                                Project Details
+                            </a>
+                        </li>
+                        <li>
+                            <a href="newproject.html">
+                                New Project
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-submenu">
+                    <a href="#" class="sidebar-menu-dropdown">
+                        <i class='bx bxs-user'></i>
+                        <span>Client</span>
+                        <div class="dropdown-icon"><i class='bx bx-chevron-down'></i></div>
+                    </a>
+                    <ul class="sidebar-menu sidebar-menu-dropdown-content">
+                        <li>
+                            <a href="managerclient.html">
+                                Manager Client
+                            </a>
+                        </li>
+                        <li>
+                            <a href="clientdetails.html">
+                                Client Details
+                            </a>
+                        </li>
+                        <li>
+                            <a href="newclient.html">
+                                New Client
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="adminmessages.html">
+                        <i class='bx bxs-message-rounded-detail'></i>
+                        <span>Messages</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html">
+                        <i class='bx bx-log-out-circle'></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="main">
+        <div class="navbar">
+            <div class="navbar-logo">
+                <div class="navbar-user">
+                    <p>rahul.k@calanjiyam.com</p>
+                    <p style="opacity: 0.7;font-size: 12px;margin: 3px;">ADMIN</p>
+                </div>
+                <img src="./images/logo.png">
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="newproject-content-header">
+                NEW PROJECT
+            </div>
+            <div class="newproject-content">
+                <div class="row">
+                    <div>
+                        <div class="form-group"> 
+                            <label class="form-label">Project ID</label> 
+                            <input class="form-control" placeholder="2569852"> </div>
+                    </div>
+                    <div>
+                        <div class="form-group"> 
+                            <label class="form-label">Project Title</label> 
+                            <input class="form-control" placeholder="Software Development"> </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <div class="form-group"> 
+                            <label class="form-label">Department:</label> 
+                            <select name="attendance" class="form-control">
+                                <option label="Select Department">
+                                </option>
+                                <option value="1">Designing Department</option>
+                                <option value="2">Development Department</option>
+                                <option value="3">Marketing Department</option>
+                                <option value="4">Human Resource Department</option>
+                                <option value="5">Managers Department</option>
+                                <option value="6">Application Department</option>
+                                <option value="7">Support Department</option>
+                                <option value="8">IT Department</option>
+                                <option value="9">Technical Department</option>
+                                <option value="10">Accounts Department</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <div class="form-group"> 
+                            <label class="form-label">Assign Team:</label> 
+                            <select name="attendance" class="form-control"></option>
+                                <option value="1">Team 01</option>
+                                <option value="2">Team 02</option>
+                                <option value="3">Team 03</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 mb-24">
+                        <div class="form-group"> 
+                            <label class="form-label">Manager Client:</label> 
+                            <select name="attendance" class="form-control">
+                                <option label="Select Client">
+                                </option>
+                                <option value="1">Client 01</option>
+                                <option value="2">Client 02</option>
+                                <option value="3">Client 03</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <div class="form-group"> 
+                            <label class="form-label">From:</label>
+                            <input class="form-control" placeholder="DD-MM-YYY" type="date">
+                                    
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <div class="form-group"> 
+                            <label class="form-label">To:</label>
+                            <input class="form-control" placeholder="DD-MM-YYY" type="date">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group"> <label class="form-label">Description:</label>
+                    <textarea class="form-control" name="text" cols="30" rows="10"></textarea>
+                </div>
+                <div class="row">
+                    <div>
+                        <div>
+                            <label class="form-label">Work Status : </label>
+                            <label style="padding-left: 10px;" class="custom-control">
+                                <input type="radio" name="example-radios1"
+                                    value="option1">
+                                <span>Completed</span>
+                            </label>
+                            <label class="custom-control">
+                                <input type="radio" name="example-radios1"
+                                    value="option2">
+                                <span>Pending</span>
+                            </label>
+                            <label class="custom-control">
+                                <input type="radio" name="example-radios1"
+                                    value="option3">
+                                <span>On Progress</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="#" class="btn" onclick="">SUBMIT</a> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/main.js"></script>
+    <script src="./libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
